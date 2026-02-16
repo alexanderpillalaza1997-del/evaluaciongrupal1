@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Estudiantes - KrakeDev</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Registro Básico de Estudiantes</h1>
+
+        <section class="form-section">
+            <h2>Agregar / Actualizar Estudiante</h2>
+            <div class="input-group">
+                <label for="txtNombre">Nombre completo:</label>
+                <input type="text" id="txtNombre" placeholder="Ej: Ana López">
+                <span id="errNombre" class="error-msg"></span>
+            </div>
+
+            <div class="input-group">
+                <label for="txtCorreo">Correo electrónico:</label>
+                <input type="email" id="txtCorreo" placeholder="algo@correo.com">
+                <span id="errCorreo" class="error-msg"></span>
+            </div>
+
+            <div class="input-group">
+                <label for="txtId">ID del estudiante:</label>
+                <input type="text" id="txtId" placeholder="Solo números">
+                <span id="errId" class="error-msg"></span>
+            </div>
+
+            <button id="btnGuardar" onclick="guardarEstudiante()">Guardar estudiante</button>
+        </section>
+
+        <hr>
+
+        <section class="list-section">
+            <h2>Lista de Estudiantes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaEstudiantes">
+                    </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <section class="delete-section">
+            <h2>Eliminar Estudiante</h2>
+            <div class="input-group">
+                <label for="txtIdEliminar">ID para eliminar:</label>
+                <input type="text" id="txtIdEliminar">
+                <span id="errEliminar" class="error-msg"></span>
+            </div>
+            <button class="btn-delete" onclick="eliminarEstudiante()">Eliminar estudiante</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
