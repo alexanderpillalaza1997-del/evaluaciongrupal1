@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema Bancario Centralizado</title>
+    <link href="banco.css" rel="stylesheet" />
+    <script src="integracion.js"></script>
+    <script src="utilitarios.js"></script>
+</head>
+<body onload="cargar();">
+    <div class="principal">
+        <div class="menu">
+            <div class="contenedorLogo">
+                <img src="./imagenes/logoKrakeDev.png" width="80%" />
+            </div>
+            <div class="contenedorBotones">
+                <input type="button" value="CUENTAS" class="boton" onclick="mostrarCuentasApp()" />
+                <input type="button" value="TRANSACCIONES" class="boton" onclick="mostrarTransaccionesApp()" />
+                <input type="button" value="MOVIMIENTOS" class="boton" onclick="mostrarMovimientosApp()" />
+            </div>
+            <div class="contenedorInfoGrupo">
+                <div>INTEGRANTE 1</div>
+                <div>INTEGRANTE 2</div>
+                <div>INTEGRANTE 3</div>
+            </div>
+        </div>
+
+        <div class="contenido" id="divCuentas">
+            <div class="superior">
+                <div class="titulo">GESTIÓN DE CUENTAS</div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">CÉDULA:</div>
+                    <input type="text" id="txtCedula" class="caja" />
+                </div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">NOMBRE:</div>
+                    <input type="text" id="txtNombre" class="caja" />
+                </div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">APELLIDO:</div>
+                    <input type="text" id="txtApellido" class="caja" />
+                </div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">NÚMERO CUENTA:</div>
+                    <input type="text" id="txtNumeroCuenta" class="caja" />
+                </div>
+                <div class="contenedorAcciones">
+                    <input type="button" value="CREAR CUENTA" onclick="agregar();" />
+                </div>
+            </div>
+            <div class="inferior" id="areaTablasCuentas"></div>
+        </div>
+
+        <div class="contenido" id="divTransacciones" style="display:none;">
+            <div class="superior">
+                <div class="titulo">TRANSACCIONES</div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">BUSCAR CUENTA:</div>
+                    <input type="text" id="txtBusquedaCuenta" class="caja" />
+                </div>
+                <div class="contenedorAcciones">
+                    <input type="button" value="BUSCAR" onclick="ejecutarBusqueda();" />
+                </div>
+                <div id="infoCliente">
+                    <p>Cliente: <span id="lblCliente">---</span></p>
+                    <p>Saldo Actual: <span id="lblSaldo">---</span></p>
+                </div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">MONTO:</div>
+                    <input type="number" id="txtMonto" class="caja" />
+                </div>
+                <div class="contenedorAcciones">
+                    <input type="button" id="btnDepositar" value="DEPOSITAR" onclick="ejecutarDeposito();" disabled />
+                    <input type="button" id="btnRetirar" value="RETIRAR" onclick="ejecutarRetirar();" disabled />
+                </div>
+            </div>
+        </div>
+
+        <div class="contenido" id="divMovimientos" style="display:none;">
+            <div class="inferior">
+                <div class="titulo">HISTORIAL DE MOVIMIENTOS</div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">FILTRAR CUENTA:</div>
+                    <input type="text" id="txtFiltroMov" class="caja" />
+                </div>
+                <div class="contenedorAcciones">
+                    <input type="button" value="VER MOVIMIENTOS" onclick="ejecutarFiltrarMovimientos();" />                    
+                </div>
+                <div id="tablaMovimientos"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
